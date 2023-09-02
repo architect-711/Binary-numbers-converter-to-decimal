@@ -1,32 +1,57 @@
 
-class BinaryConverterImpl implements BinaryConverter {
-    private final int binaryNumber;
+class BinaryConverterImpl {
+    private final float binaryNumber;
+    public boolean hasComma = false;
 
-    public BinaryConverterImpl(int binaryNumber) {
+    public BinaryConverterImpl(float binaryNumber) {
         this.binaryNumber = binaryNumber;
     }
 
-    @Override
-    public double getConvertedBinaryToDecimal() {
-        int[] binaryDigits = returnInvertedBinaryDigitsArray();
-        double decimal = 0;
+    public void convertToDecimal() {
+        System.out.println(binaryNumber);
 
-        for (int index = 0; index < binaryDigits.length; index++)
-            decimal += Math.pow(2, index) * binaryDigits[index];
-
-        return decimal;
+        if (isBinary())
+            splitConversionLogic();
     }
 
-    private int[] returnInvertedBinaryDigitsArray() {
-        StringBuilder stringBuilderBinaryNumber = new StringBuilder(Integer.toString(binaryNumber));
-        int[] invertedBinaryDigitsArray = new int[stringBuilderBinaryNumber.length()];
-
-        stringBuilderBinaryNumber.reverse();
+    //  TODO binaryNumber always has a comma since it is a float
+    private boolean isBinary() throws IllegalArgumentException {
+        StringBuilder stringBuilderBinaryNumber = new StringBuilder(String.valueOf(binaryNumber));
 
         for (int index = 0; index < stringBuilderBinaryNumber.length(); index++) {
-            invertedBinaryDigitsArray[index] = Integer.parseInt(String.valueOf(stringBuilderBinaryNumber.charAt(index)));
+            char character = stringBuilderBinaryNumber.charAt(index);
+
+            if (!(character == '1' || character == '0' || character == '.'))
+                throw new IllegalArgumentException("Passed number is not a binary, binary must contains 1 or 0, and . character. Your number: " + binaryNumber);
+
+            if (character == '.')
+                hasComma = true;
         }
 
-        return invertedBinaryDigitsArray;
+        return true;
+    }
+
+    // TODO can't divide logic, because of binaryNumber type
+    private void splitConversionLogic() {
+        if (hasComma)
+            divideByIntegerAndFractionDigit();
+        else
+            countInteger();
+    }
+
+    private void divideByIntegerAndFractionDigit() {
+        System.out.println("divide");
+    }
+
+    private void countInteger() {
+        System.out.println("count integer");
+    }
+
+    public float getBinaryNumber() {
+        return binaryNumber;
+    }
+
+    public boolean isHasComma() {
+        return hasComma;
     }
 }
