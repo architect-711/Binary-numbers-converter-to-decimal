@@ -1,4 +1,4 @@
-# Binary Converter
+# Binary Converter (in development)
 ## Description
 ### Motivation
 
@@ -14,6 +14,5 @@ Since I recently started learning Java, I need to make some interesting projects
 
 ### Features
 
-1. Has validation
+1. Has validation (not yet)
 2. Since it is a service, there is no any try/catch block inside, that block for client
-
