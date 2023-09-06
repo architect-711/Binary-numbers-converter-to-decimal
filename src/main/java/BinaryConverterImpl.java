@@ -27,8 +27,11 @@ class BinaryConverterImpl {
 
         IntegerArrayConverter integerArrayConverter = new IntegerArrayConverter();
         int[] digits = integerArrayConverter.getArrayOfDigits((int) binaryNumber);
+        // TODO Reject of using that shit method
+        int[] invertedDigits = integerArrayConverter.invertArrayOfIntegers(digits);
 
-        // count decimal using recursion
+        // TODO rewrite using recursion
+        formula(invertedDigits);
     }
 
     public boolean isIntegerBinary() {
@@ -42,6 +45,11 @@ class BinaryConverterImpl {
         }
 
         return true;
+    }
+
+    private void formula(int[] digits) {
+        for (int index = 0; index < digits.length; index++)
+            decimal += Float.parseFloat(String.valueOf(digits[index] * Math.pow(2, index)));
     }
 
     public float getBinaryNumber() {

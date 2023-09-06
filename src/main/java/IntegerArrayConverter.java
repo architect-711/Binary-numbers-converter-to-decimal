@@ -5,7 +5,6 @@ import java.util.Collections;
 public class IntegerArrayConverter {
     public IntegerArrayConverter() {}
 
-    // SHIT CODE
     public int[] getArrayOfDigits(int number) {
         StringBuilder stringBuilderOfNumber = new StringBuilder(String.valueOf(number));
         int[] arrayOfDigits = new int[stringBuilderOfNumber.length()];

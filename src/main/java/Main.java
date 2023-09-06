@@ -6,6 +6,8 @@ public class Main {
 
         BinaryConverterImpl binaryConverter = new BinaryConverterImpl(binary);
         binaryConverter.convert();
+
+        System.out.println(binaryConverter.getDecimal());
     }
 
 }
