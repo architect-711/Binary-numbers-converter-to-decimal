@@ -27,8 +27,7 @@ class BinaryConverterImpl {
 
         IntegerArrayConverter integerArrayConverter = new IntegerArrayConverter();
         int[] digits = integerArrayConverter.getArrayOfDigits((int) binaryNumber);
-        // TODO Reject of using that shit method
-        int[] invertedDigits = integerArrayConverter.invertArrayOfIntegers(digits);
+        int[] invertedDigits = integerArrayConverter.getInvertedArrayOfDigits(digits);
 
         // TODO rewrite using recursion
         formula(invertedDigits);

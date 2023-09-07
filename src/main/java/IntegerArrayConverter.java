@@ -15,31 +15,16 @@ public class IntegerArrayConverter {
         return arrayOfDigits;
     }
 
-    // SHIT CODE
-    public int[] invertArrayOfIntegers(int[] array) {
-        Integer[] integerObjectArray = convertToIntegerObjectArray(array);
-        Collections.reverse(Arrays.asList(integerObjectArray));
+    public int[] getInvertedArrayOfDigits(int[] array) {
+        int[] invertedArray = new int[array.length];
+        int counter = 0;
 
-        return convertToArrayOfIntegers(integerObjectArray);
-    }
+        for (int index = array.length - 1; index >= 0; index--) {
+            invertedArray[counter] = array[index];
 
-    // SHIT CODE
-    private Integer[] convertToIntegerObjectArray(int[] array) {
-        Integer[] integerArrayObject = new Integer[array.length];
+            counter++;
+        }
 
-        for (int index = 0; index < array.length; index++)
-            integerArrayObject[index] = array[index];
-
-        return integerArrayObject;
-    }
-
-    // SHIT CODE
-    private int[] convertToArrayOfIntegers(Integer[] array) {
-        int[] target = new int[array.length];
-
-        for (int index = 0; index < array.length; index++)
-            target[index] = array[index];
-
-        return target;
+        return invertedArray;
     }
 }
