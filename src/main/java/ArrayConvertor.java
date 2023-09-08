@@ -1,9 +1,5 @@
-import java.util.Arrays;
-import java.util.Collections;
-
-// TODO rewrite class according to Uncle's Bob commandments
-public class IntegerArrayConverter {
-    public IntegerArrayConverter() {}
+public class ArrayConvertor {
+    public ArrayConvertor() {}
 
     public int[] getArrayOfDigits(int number) {
         StringBuilder stringBuilderOfNumber = new StringBuilder(String.valueOf(number));
@@ -13,6 +9,21 @@ public class IntegerArrayConverter {
             arrayOfDigits[index] = Integer.parseInt(String.valueOf(stringBuilderOfNumber.charAt(index)));
 
         return arrayOfDigits;
+    }
+
+    public String[] splitByRegex(float number, String regex) {
+        String stringNumber = String.valueOf(number);
+
+        return stringNumber.split(regex);
+    }
+
+    public int[] convertElementsToIntegers(String[] array) {
+        int[] intArray = new int[array.length];
+
+        for (int index = 0; index < array.length; index++)
+            intArray[index] = Integer.parseInt(array[index]);
+
+        return intArray;
     }
 
     public int[] getInvertedArrayOfDigits(int[] array) {
