@@ -1,6 +1,4 @@
-import java.util.Objects;
 
-// TODO rewrite using Integer instead of int. Replace validation to specific class!!!! Separate class for integers from float!!!
 class BinaryConverterImpl {
     private final float binaryNumber;
     private float decimal;
