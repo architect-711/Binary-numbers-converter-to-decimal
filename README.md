@@ -19,7 +19,12 @@ I like Java, and I am Java junior developer, and to understand this language bet
 1. Conversion from binary number system to decimal for integers.
 
 ## TODO
-* Conversion from binary number system to decimal for floats.
+* Conversion from binary number system to decimal for fractional and integer numbers.
 * Allow the user to select a number system converting to.
-* Input in console
 * Complement logic of converting to decimal number system. User should pick the number system his own.
+
+## Done
+* Ask user about desirable number type (fractional/integer)
+* Sure, console input
+* Divided logic
+* Error handling
