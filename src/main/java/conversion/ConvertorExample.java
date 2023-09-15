@@ -1,9 +1,11 @@
+package conversion;
 
-class BinaryConverterImpl {
+// Important class, contains examples of workable conversion
+class ConvertorExample {
     private final float binaryNumber;
     private float decimal;
 
-    public BinaryConverterImpl(float binaryNumber) {
+    public ConvertorExample(float binaryNumber) {
         this.binaryNumber = binaryNumber;
     }
 

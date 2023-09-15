@@ -5,13 +5,11 @@ import conversion.NumberType;
 import java.util.Scanner;
 
 public class UserInteraction {
-    private final Scanner scanner;
+    private final Scanner scanner = new Scanner(System.in);
     private String number;
     private NumberType numberType;
 
-    public UserInteraction() {
-        scanner = new Scanner(System.in);
-    }
+    public UserInteraction() {}
 
     public void interview() {
         askNumberType();
@@ -19,7 +17,7 @@ public class UserInteraction {
     }
 
     private void askNumberType() {
-        System.out.print("Is your number a fractional? y/n : ");
+        System.out.print("Is your number fractional? y/n : ");
         String type = scanner.nextLine();
 
         if (!type.startsWith("y") && !type.startsWith("n"))

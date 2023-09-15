@@ -7,20 +7,19 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Validation {
-    private String number;
-    private NumberType type;
+    private final String number;
+    private final NumberType type;
 
-    public Validation() {}
+    public Validation(String number, NumberType type) {
+        this.number = number;
+        this.type = type;
+    }
 
     public boolean isBinary() {
         if (!isValid())
             throw new IllegalArgumentException("Invalid number!");
 
-        String[] numberLetters = number.split("");
-
-        System.out.println(Arrays.toString(numberLetters));
-
-        for (String letter : numberLetters) {
+        for (String letter : number.split("")) {
             if (letter.equals(".") || letter.equals(","))
                 continue;
 
@@ -32,19 +31,11 @@ public class Validation {
     }
 
     private boolean isValid() {
-        // integer must not contains comma, fractional must contains one comma
+        // integer must not contains comma, fractional must contains one comma or dot
         String regex = NumberType.INTEGER == type ? "^\\d+$" : "^\\d+[.|,]\\d+$";
         Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
 
         return pattern.matcher(number).find();
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public void setType(NumberType type) {
-        this.type = type;
     }
 
 }
