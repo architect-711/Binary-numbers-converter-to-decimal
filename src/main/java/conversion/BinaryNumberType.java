@@ -1,6 +1,6 @@
 package conversion;
 
-public enum NumberType {
+public enum BinaryNumberType {
     INTEGER,
     FRACTIONAL
 }

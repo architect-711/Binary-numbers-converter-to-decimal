@@ -1,28 +1,24 @@
-import conversion.Conversion;
-import conversion.NumberType;
+import conversion.ConversionService;
 import user.UserInteraction;
 
 public class BinaryConvertor {
     private static final UserInteraction userInteraction = new UserInteraction();
-    private static NumberType numberType;
 
     public BinaryConvertor() {}
 
     public static void run() {
         try {
             userInteraction.interview();
-
-            numberType = userInteraction.getNumberType();
-            reactOnNumberType();
-
             userInteraction.close();
+
+            convertToBinary();
         } catch (Exception exception) {
-            System.out.println("[ERROR]: class - " + exception.getClass().getSimpleName() + " | message - " + exception.getMessage());
+            System.out.println("❌ [ERROR]: class - " + exception.getClass().getSimpleName() + " | message - " + exception.getMessage());
         }
     }
 
-    private static void reactOnNumberType() {
-        Conversion conversion = new Conversion(numberType, userInteraction.getNumber());
+    private static void convertToBinary() {
+        ConversionService conversion = new ConversionService(userInteraction.getNumberType(), userInteraction.getNumber());
 
         conversion.transform();
     }

@@ -1,13 +1,14 @@
 package user;
 
-import conversion.NumberType;
+import conversion.BinaryNumberType;
 
 import java.util.Scanner;
 
 public class UserInteraction {
     private final Scanner scanner = new Scanner(System.in);
+    
     private String number;
-    private NumberType numberType;
+    private BinaryNumberType binaryNumberType;
 
     public UserInteraction() {}
 
@@ -18,21 +19,16 @@ public class UserInteraction {
 
     private void askNumberType() {
         System.out.print("Is your number fractional? y/n : ");
-        String type = scanner.nextLine();
+        // do not use ... = Character.toLowerCase(scanner.next().charAt(0)) <- error
+        char userNumberType = Character.toLowerCase(scanner.nextLine().charAt(0));
 
-        if (!type.startsWith("y") && !type.startsWith("n"))
-            throw new IllegalArgumentException("Invalid input!");
+        if (userNumberType != 'y' && userNumberType != 'n') throw new IllegalArgumentException("Invalid input! Answer must be 'y' or 'n' at any case.");
 
-        if (type.toLowerCase().startsWith("y"))
-            numberType = NumberType.FRACTIONAL;
-
-        if (type.toLowerCase().startsWith("n"))
-            numberType = NumberType.INTEGER;
-
+        binaryNumberType = userNumberType == 'y' ? BinaryNumberType.FRACTIONAL :  BinaryNumberType.INTEGER;
     }
 
     private void askNumber() {
-        System.out.print("Enter binary number: ");
+        System.out.print("Enter binary number (use . sign for fraction numbers): ");
         number = scanner.nextLine();
     }
 
@@ -44,7 +40,7 @@ public class UserInteraction {
         return number;
     }
 
-    public NumberType getNumberType() {
-        return numberType;
+    public BinaryNumberType getNumberType() {
+        return binaryNumberType;
     }
 }
