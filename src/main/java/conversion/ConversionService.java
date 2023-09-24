@@ -2,7 +2,7 @@ package conversion;
 
 import conversion.convertors.FractionalConverter;
 import conversion.convertors.IntegerConvertor;
-import validation.Validation;
+import output.MessageIndicator;
 
 public class ConversionService {
     private final BinaryNumberType NUMBER_TYPE;
@@ -14,8 +14,6 @@ public class ConversionService {
     }
 
     public void transform() {
-        throwErrorIfNotBinary();
-
         if (BinaryNumberType.INTEGER == NUMBER_TYPE) {
             convertInteger();
 
@@ -26,20 +24,15 @@ public class ConversionService {
 
     private void convertInteger() {
         IntegerConvertor integerConvertor = new IntegerConvertor(NUMBER);
+        integerConvertor.convertToDecimal();
 
-        System.out.printf("Your decimal number: %d", integerConvertor.getDecimal());
+        MessageIndicator.log(String.format("Your decimal number: %d", integerConvertor.getDecimal()));
     }
 
     private void convertFractional() {
         FractionalConverter fractionalConverter = new FractionalConverter(NUMBER);
+        fractionalConverter.convertToDecimal();
 
-        System.out.printf("Your decimal number: %f", fractionalConverter.getDecimal());
-    }
-
-    private void throwErrorIfNotBinary() {
-        Validation validation = new Validation(NUMBER, NUMBER_TYPE);
-
-        if (!validation.isBinary() || Double.parseDouble(NUMBER) <= 0)
-            throw new IllegalArgumentException("❌ This is not a binary number. Binary number must consists of 1 or 0, and be bigger than 0.");
+        MessageIndicator.log(String.format("Your decimal number: %f", fractionalConverter.getDecimal()));
     }
 }

@@ -4,27 +4,18 @@
 
 ### Motivation
 
-I want to create my own number converter from a number system to another number system.
+I wanted to create my own number converter from a binary number system to decimal number system.
 
 ### Why did I build this project?
 
-I like Java, and I am Java junior developer, and to understand this language better. I build this little and absolutely useless project.
+That's interesting and invaluable experience. I am Java enthusiast and this is the answer why i build that absolutely useless program.
 
 ### Solving problems
 
-1. Conversion from one number system to another one
+1. Conversion from binary number system to decimal.
 
-# What is ready???
+## How to install and run the project?
 
-1. Conversion from binary number system to decimal for integers.
+### Console
 
-## TODO
-* Conversion from binary number system to decimal for fractional and integer numbers.
-* Allow the user to select a number system converting to.
-* Complement logic of converting to decimal number system. User should pick the number system his own.
-
-## Done
-* Ask user about desirable number type (fractional/integer)
-* Sure, console input
-* Divided logic
-* Error handling
+If you have a java on your computer, go to ``BinaryConverter/out/artifacts/`` and open that in console, then write: ``java -jar BinaryConverter.jar``.

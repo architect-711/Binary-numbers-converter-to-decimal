@@ -18,7 +18,6 @@ public class FormulasContainer {
 
         for (int index = 0; index < fractionDigits.length; index++) {
             int fractionIndex = index + 1;
-            // 2 / (2 ^ fractionIndex)) / 2
             double result = 2 / Math.pow(2, fractionIndex) / 2;
 
             decimal += Float.parseFloat(String.valueOf(result));

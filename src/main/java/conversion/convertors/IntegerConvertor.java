@@ -4,21 +4,21 @@ import conversion.arrayutils.FormulasContainer;
 import conversion.arrayutils.ArrayConvertor;
 
 public class IntegerConvertor {
-    private String number;
+    private final String NUMBER;
+    private int decimal;
 
-    public IntegerConvertor(String number) {
-        this.number = number;
+    public IntegerConvertor(String NUMBER) {
+        this.NUMBER = NUMBER;
+    }
+
+    public void convertToDecimal() {
+        int[] digits = ArrayConvertor.getIntegerDigitsArray(NUMBER);
+        int[] reversedDigits = ArrayConvertor.getReversedArray(digits);
+
+        decimal = FormulasContainer.getDecimalFromIntegerDigits(reversedDigits);
     }
 
     public int getDecimal() {
-        int[] digits = ArrayConvertor.getIntegerDigitsArray(number);
-        int[] reversedDigits = ArrayConvertor.getReversedArray(digits);
-
-        return FormulasContainer.getDecimalFromIntegerDigits(reversedDigits);
+        return decimal;
     }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
 }
