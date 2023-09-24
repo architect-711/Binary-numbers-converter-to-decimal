@@ -1,18 +1,21 @@
-# Binary Converter (in development)
+# BinaryConverter
+
 ## Description
+
 ### Motivation
 
-I wanted to write a program that converts binary numbers to decimal
+I wanted to create my own number converter from a binary number system to decimal number system.
 
 ### Why did I build this project?
 
-Since I recently started learning Java, I need to make some interesting projects
+That's interesting and invaluable experience. I am Java enthusiast and this is the answer why i build that absolutely useless program.
 
 ### Solving problems
 
-1. Conversion binary to decimal
+1. Conversion from binary number system to decimal.
 
-### Features
+## How to install and run the project?
 
-1. Has validation (not yet)
-2. Since it is a service, there is no any try/catch block inside, that block for client
+### Console
+
+If you have a java on your computer, go to ``BinaryConverter/out/artifacts/`` and open that in console, then write: ``java -jar BinaryConverter.jar``.
